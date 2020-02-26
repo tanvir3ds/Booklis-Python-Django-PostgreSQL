@@ -1,15 +1,20 @@
 from django.shortcuts import render, redirect, HttpResponse
 
 from .models import BookList
+from . models import Productlist
 
 # Create your views here.
 
 def index(request):
     books = BookList.objects.all()
-    context = {
-        'books': books
-    }
-    return render(request, 'index.html', context)
+   
+    products = Productlist.objects.all()
+    
+
+    return render(request, 'index.html', {'books': books, 'products': products })
+
+    
+
 
 def create(request):
     print(request.POST)

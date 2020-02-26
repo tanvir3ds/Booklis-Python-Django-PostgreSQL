@@ -45,5 +45,35 @@
         <a class="btn btn-primary" href="/add_book/">Add Book</a>
     </div>
 
+
+    <br>  <br>  <br>  <br>
+
+    {% for product in products %}
+<!--
+    <tr>
+    <td>{{ product.title }}</td>
+    <td>{{ product.price }}</td>
+    <td>{{ product.brand }}</td>
+    <img src="{{product.img.url}}">
+    </tr>
+    -->
+
+    <br> <br>
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <img src="{{product.img.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">{{ product.title }}</p>
+              <p class="card-text">{{ product.price }}</p>
+              <p class="card-text">{{ product.brand }}</p>
+            </div>
+          </div>
+
+    </div>
+
+    
+
+    {% endfor %}
+
 </body>
 </html>
